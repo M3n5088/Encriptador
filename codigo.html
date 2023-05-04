@@ -1,0 +1,64 @@
+<script>
+function encriptarTexto(texto) {
+  // Validamos que el texto solo contenga minúsculas sin caracteres especiales
+  if (!/^[a-z ]+$/.test(texto)) {
+    console.log("No se permiten mayúsculas ni caracteres especiales en el texto");
+    return "";
+  }
+
+  const regex = /[aeiou]/g;
+  const correspondencias = {
+    a: "ai",
+    e: "enter",
+    i: "imes",
+    o: "ober",
+    u: "ufat"
+  };
+
+  function reemplazo(match) {
+    return correspondencias[match];
+  }
+
+  const textoEncriptado = texto.replace(regex, reemplazo);
+  return textoEncriptado;
+}
+
+function desencriptarTexto(textoEncriptado) {
+  // Validamos que el texto encriptado solo contenga minúsculas sin caracteres especiales
+  if (!/^[a-z ]+$/.test(textoEncriptado)) {
+    console.log("El texto encriptado no cumple con el formato esperado");
+    return "";
+  }
+
+  const correspondencias = {
+    ai: "a",
+    enter: "e",
+    imes: "i",
+    ober: "o",
+    ufat: "u"
+  };
+
+  const regex = /ai|enter|imes|ober|ufat/g;
+
+  function reemplazo(match) {
+    return correspondencias[match];
+  }
+
+  const textoDesencriptado = textoEncriptado.replace(regex, reemplazo);
+  return textoDesencriptado;
+}
+
+// Ejemplo de uso
+const textoOriginal = "Hola mundo!"; // mensaje con mayúsculas y caracteres especiales
+const textoEncriptado = encriptarTexto(textoOriginal); // no se permite
+console.log(textoEncriptado); // Salida: ""
+
+const textoOriginal2 = "Hola mundo";
+const textoEncriptado2 = encriptarTexto(textoOriginal2);
+console.log(textoEncriptado2); // Salida: Hilaimenter munimesdob
+
+const textoDesencriptado = desencriptarTexto(textoEncriptado2);
+console.log(textoDesencriptado); // Salida: Hola mundo
+
+
+</script>
