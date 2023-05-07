@@ -1,10 +1,10 @@
 *{
-  background: #f3f5fc;
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  font-size: 32;
+  background: #d3d144;
+  font-family: Inter;
+  font-weight: 400px;
+  font-size: 32px;
   line-height: 150%;
-
+  font-style: bold;
 }
 .logo{
   padding-top: 10px;
@@ -23,6 +23,8 @@ main{
   color: #0a3871;
   margin-top: 90px;
   text-transform: lowercase;
+  background-color: #ffffff;
+  border-top: 20px;
 }
 
 ::placeholder{ color: #0a3871;}
@@ -37,7 +39,10 @@ main{
 
 .botones{
   display: flex;
-  margin-top: 18px; 
+  margin-top: 18px;
+  flex: none;
+  order: 0;
+  flex-grow: 0; 
 }
 
 .btn-encriptar{
@@ -84,8 +89,8 @@ main{
   cursor: pointer;
   height: 67px;
   margin-left: 108px;
-  margin-top: 350px;
-  position: absolute;
+  margin-top: 500px;
   width: 336px;
+  position: fixed;
 }
 

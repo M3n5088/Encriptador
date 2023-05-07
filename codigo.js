@@ -1,8 +1,16 @@
-<script>
+const textArea=document.querySelector("text-area");
+const mensaje=document.querySelector("mensaje");
+
+function btnEncriptar(){
+  const textoEncriptado = encriptarTexto(textArea.value);
+  mensaje.value = textoEncriptado;
+  mensaje.value = "";
+  mensaje.Style.backgroundImage = "none";
+}
+
 function encriptarTexto(texto) {
   // Validamos que el texto solo contenga minúsculas sin caracteres especiales
   if (!/^[a-z ]+$/.test(texto)) {
-    console.log("No se permiten mayúsculas ni caracteres especiales en el texto");
     return "";
   }
 
@@ -26,7 +34,6 @@ function encriptarTexto(texto) {
 function desencriptarTexto(textoEncriptado) {
   // Validamos que el texto encriptado solo contenga minúsculas sin caracteres especiales
   if (!/^[a-z ]+$/.test(textoEncriptado)) {
-    console.log("El texto encriptado no cumple con el formato esperado");
     return "";
   }
 
@@ -47,18 +54,3 @@ function desencriptarTexto(textoEncriptado) {
   const textoDesencriptado = textoEncriptado.replace(regex, reemplazo);
   return textoDesencriptado;
 }
-
-// Ejemplo de uso
-const textoOriginal = "Hola mundo!"; // mensaje con mayúsculas y caracteres especiales
-const textoEncriptado = encriptarTexto(textoOriginal); // no se permite
-console.log(textoEncriptado); // Salida: ""
-
-const textoOriginal2 = "Hola mundo";
-const textoEncriptado2 = encriptarTexto(textoOriginal2);
-console.log(textoEncriptado2); // Salida: Hilaimenter munimesdob
-
-const textoDesencriptado = desencriptarTexto(textoEncriptado2);
-console.log(textoDesencriptado); // Salida: Hola mundo
-
-
-</script>
