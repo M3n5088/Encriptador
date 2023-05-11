@@ -1,17 +1,16 @@
-const textArea=document.querySelector("text-area");
-const mensaje=document.querySelector("mensaje");
+const textArea=document.querySelector(".text-area");
+const mensaje=document.querySelector(".mensaje");
 
 function btnEncriptar(){
-  const textoEncriptado = encriptarTexto(textArea.value);
+  const textoEncriptado = encriptar(textArea.value);
   mensaje.value = textoEncriptado;
-  mensaje.value = "";
-  mensaje.Style.backgroundImage = "none";
+  textArea.value = "";
+  mensaje.style.backgroundImage = "none";
 }
 
-function encriptarTexto(texto) {
-  // Validamos que el texto solo contenga minúsculas sin caracteres especiales
+function encriptar(texto) {
   if (!/^[a-z ]+$/.test(texto)) {
-    return "";
+    return ""
   }
 
   const regex = /[aeiou]/g;
@@ -31,8 +30,15 @@ function encriptarTexto(texto) {
   return textoEncriptado;
 }
 
-function desencriptarTexto(textoEncriptado) {
-  // Validamos que el texto encriptado solo contenga minúsculas sin caracteres especiales
+function btnDesencriptar(){
+  const textoEncriptado = desencriptar(textArea.value);
+  mensaje.value = textoEncriptado;
+  textArea.value = "";
+  mensaje.style.backgroundImage = "none";
+}
+
+
+function desencriptar(textoEncriptado) {
   if (!/^[a-z ]+$/.test(textoEncriptado)) {
     return "";
   }
@@ -52,5 +58,5 @@ function desencriptarTexto(textoEncriptado) {
   }
 
   const textoDesencriptado = textoEncriptado.replace(regex, reemplazo);
-  return textoDesencriptado;
+  return textoDesencriptado
 }
