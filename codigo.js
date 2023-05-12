@@ -60,3 +60,9 @@ function desencriptar(textoEncriptado) {
   const textoDesencriptado = textoEncriptado.replace(regex, reemplazo);
   return textoDesencriptado
 }
+function btnCopiar(){
+  mensaje.select();
+  navigator.clipboard.writeText(mensaje.value)
+  mensaje.value="";
+  alert("Texto Copiado")
+}
