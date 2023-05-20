@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="Style.css">
+  <link rel="stylesheet" href="reset.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
@@ -15,9 +16,9 @@
   </header>
 <main>
   <section>
-    <textarea id= "texto" class="text-area" cols="20" rows="5" placeholder="Ingrese texto aqui"></textarea>
-    <div>
-        <h6 class="informacio">Solo letras minusculas y sin acentos</h6>
+    <textarea class="text-area" cols="20" rows="30" placeholder="Ingrese texto aqui"></textarea>
+    <div id="info">
+        <h6 class="informacion">Solo letras minusculas y sin acentos</h6>
     </div>
     <div class="botones">
         <button type="button" class="btn-encriptar" onclick = "btnEncriptar()">Encriptar</button>
@@ -25,8 +26,8 @@
     </div>
   </section>
   <section>
-    <textarea id= "mensaje" class="mensaje" cols="20" rows="10"></textarea>
-    <div><button type="button" class="copiar" onclick="btnCopiar()">Copiar</button></div>
+    <textarea class="mensaje" cols="20" rows="10"></textarea>
+    <div><button class="copiar" onclick="btnCopiar()">Copiar</button></div>
   </section>
 </main>
 <script src="codigo.js"></script>
