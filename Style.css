@@ -89,4 +89,6 @@ width: 336px;
 .informacion{
 color: #495057;
 font-size: 18px;
+font-style: italic;
+font-weight: bold;
 }
